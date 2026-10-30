@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In | Saffron &amp; Clay</title>
+  <meta name="description" content="Log in to Saffron & Clay to order faster and track your orders.">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login" class="no-tabbar">
+  <main class="auth-page">
+    <!-- Illustration side -->
+    <aside class="auth-art" aria-hidden="true">
+      <div class="rings"><span style="width:560px;height:560px"></span><span style="width:760px;height:760px"></span><span style="width:960px;height:960px"></span></div>
+      <a href="index.html" class="logo on-dark"><img src="images/logo.svg" alt="" width="44" height="44"><span><span class="logo-name">Saffron &amp; Clay</span><span class="logo-tag">Sri Lankan Kitchen</span></span></a>
+      <div class="plate-wrap"><img src="images/hero-plate.svg" alt=""></div>
+      <div class="auth-quote">
+        <span class="stars">★★★★★</span>
+        <p>“Every visit feels like Sunday lunch at home. The hoppers are unbeatable.”</p>
+        <small>— Dilini W., regular since 2015</small>
+      </div>
+    </aside>
+
+    <!-- Form side -->
+    <section class="auth-form-side">
+      <div class="auth-top">
+        <a href="index.html" class="logo" style="visibility:hidden" id="mobileLogo"><img src="images/logo.svg" alt="" width="44" height="44"><span><span class="logo-name">Saffron &amp; Clay</span><span class="logo-tag">Sri Lankan Kitchen</span></span></a>
+        <a href="signup.html">New here? <b>Sign up</b></a>
+      </div>
+
+      <form class="auth-form" id="loginForm" novalidate>
+        <h1>Welcome back</h1>
+        <p>Log in to order faster and track your orders.</p>
+
+        <div class="form-alert" id="loginAlert" role="alert"></div>
+
+        <div class="field">
+          <label for="loginEmail">Email address <span class="req">*</span></label>
+          <div class="input-wrap">
+            <i data-icon="mail"></i>
+            <input class="input" type="email" id="loginEmail" name="email" placeholder="you@example.com" autocomplete="email" required>
+          </div>
+          <span class="field-msg error"></span>
+        </div>
+
+        <div class="field">
+          <label for="loginPassword">Password <span class="req">*</span></label>
+          <div class="input-wrap">
+            <i data-icon="lock"></i>
+            <input class="input" type="password" id="loginPassword" name="password" placeholder="Enter password" autocomplete="current-password" required>
+            <button type="button" class="toggle-pass" data-toggle-pass="loginPassword" aria-label="Show password"><i data-icon="eye"></i></button>
+          </div>
+          <span class="field-msg error"></span>
+        </div>
+
+        <div class="auth-row">
+          <label class="check"><input type="checkbox" id="rememberMe" checked> Remember me</label>
+          <a href="#" id="forgotLink">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg" id="loginBtn">Log In <i data-icon="arrowr"></i></button>
+
+        <div class="divider">or</div>
+        <a href="index.html" class="btn btn-ghost btn-block btn-lg">Continue as guest</a>
+
+        <p class="auth-switch">Don't have an account? <a href="signup.html">Sign up</a></p>
+        <p class="demo-hint">Demo project: accounts are stored only in this browser (localStorage) and passwords are hashed — never use a real password here.</p>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

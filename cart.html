@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart | Saffron &amp; Clay</title>
+  <meta name="description" content="Review the dishes in your Saffron & Clay cart, change quantities and proceed to checkout.">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="cart">
+  <header id="site-header"></header>
+
+  <main class="container" style="padding-bottom:96px">
+    <div class="cart-page-head">
+      <p class="breadcrumb" style="color:var(--terracotta)"><a href="index.html">Home</a> / Cart</p>
+      <h1>Shopping Cart</h1>
+      <p class="muted" id="cartSub">Saved automatically on this device</p>
+    </div>
+
+    <!-- Filled cart -->
+    <div id="cartFilled" hidden>
+      <div class="order-grid">
+        <div class="card panel">
+          <div class="cart-table-head"><span>DISH</span><span>QUANTITY</span><span>TOTAL</span></div>
+          <div id="cartList"></div>
+          <div class="cart-actions">
+            <a href="menu.html"><i data-icon="arrowl"></i>Continue shopping</a>
+            <button type="button" id="clearCartBtn">Clear cart</button>
+          </div>
+        </div>
+        <aside class="summary" aria-label="Order summary">
+          <h3>Order summary</h3>
+          <div id="cartSummaryRows"></div>
+          <form class="promo" id="cartPromoForm"><i data-icon="tag"></i><input placeholder="Promo code (try SAFFRON10)" aria-label="Promo code" maxlength="20"><button type="submit">Apply</button></form>
+          <p class="promo-msg" id="cartPromoMsg"></p>
+          <a href="services.html#checkout" class="btn btn-primary">Proceed to Checkout <i data-icon="arrowr"></i></a>
+          <p class="hint">Delivery fee shown for home delivery · choose pickup at checkout</p>
+        </aside>
+      </div>
+
+      <h2 style="font-size:28px;margin:56px 0 20px">Add something sweet?</h2>
+      <div class="upsell-grid" id="upsell"></div>
+    </div>
+
+    <!-- Empty cart -->
+    <div class="empty-state empty-cart" id="cartEmpty" hidden>
+      <div class="ei"><i data-icon="cart"></i></div>
+      <h3>Your cart is empty</h3>
+      <p>Looks like you haven't added anything yet. Our kottu is calling…</p>
+      <a href="menu.html" class="btn btn-outline btn-sm">Browse menu</a>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/cart-ui.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

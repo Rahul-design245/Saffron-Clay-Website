@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services &amp; Online Ordering | Saffron &amp; Clay</title>
+  <meta name="description" content="Online ordering, home delivery, takeaway, dine-in and catering from Saffron & Clay. Place your order in minutes.">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="services">
+  <header id="site-header"></header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-art plate warm"><img src="images/dishes/dish-8.svg" alt=""></div>
+      <div class="container">
+        <p class="breadcrumb"><a href="index.html">Home</a> / Services</p>
+        <h1>Services &amp; Online Ordering</h1>
+        <p>Enjoy Saffron &amp; Clay your way — order online for delivery or pickup, dine with us, or let us cater your event.</p>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head center"><span class="eyebrow">What we offer</span><h2>Our services</h2></div>
+        <div class="service-grid">
+          <article class="card service-card active">
+            <span class="fi"><i data-icon="bag"></i></span><h3>Online Ordering</h3>
+            <p>Order from our full menu 24/7 and schedule for later.</p>
+            <ul><li><i data-icon="check"></i>Pay on delivery / pickup</li><li><i data-icon="check"></i>Live order status</li></ul>
+          </article>
+          <article class="card service-card">
+            <span class="fi"><i data-icon="truck"></i></span><h3>Home Delivery</h3>
+            <p>Hot food to your door in 30–45 minutes.</p>
+            <ul><li><i data-icon="check"></i>Colombo 01 – 08 &amp; Dehiwala</li><li><i data-icon="check"></i>Fee LKR 350 · free over 5,000</li></ul>
+          </article>
+          <article class="card service-card">
+            <span class="fi"><i data-icon="clock"></i></span><h3>Takeaway</h3>
+            <p>Order ahead and collect from our counter.</p>
+            <ul><li><i data-icon="check"></i>Ready in ~20 minutes</li><li><i data-icon="check"></i>No packing charge</li></ul>
+          </article>
+          <article class="card service-card">
+            <span class="fi"><i data-icon="utensils"></i></span><h3>Dine-in</h3>
+            <p>Relax in our clay-and-timber dining room.</p>
+            <ul><li><i data-icon="check"></i>80 seats + private room</li><li><i data-icon="check"></i>Reservations welcome</li></ul>
+          </article>
+          <article class="card service-card">
+            <span class="fi"><i data-icon="catering"></i></span><h3>Catering &amp; Events</h3>
+            <p>Weddings, office lunches and almsgivings.</p>
+            <ul><li><i data-icon="check"></i>From 25 guests</li><li><i data-icon="check"></i>Book 5 days ahead</li></ul>
+          </article>
+        </div>
+        <div class="info-strip">
+          <div><i data-icon="pin"></i><span><small>Delivery areas</small><b>Colombo 01 – 08, Dehiwala</b></span></div>
+          <div><i data-icon="clock"></i><span><small>Delivery hours</small><b>11:00 am – 9:30 pm</b></span></div>
+          <div><i data-icon="truck"></i><span><small>Delivery fee</small><b>LKR 350 · free over 5,000</b></span></div>
+          <div><i data-icon="receipt"></i><span><small>Payment</small><b>Cash / card on delivery</b></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ONLINE ORDER / CHECKOUT -->
+    <section class="section" id="checkout" style="padding-top:0;scroll-margin-top:100px">
+      <div class="container">
+        <div class="order-head">
+          <div><span class="eyebrow">Online order</span><h2>Place your order</h2></div>
+          <div class="steps" id="steps">
+            <span class="step done"><span class="num"><i data-icon="check"></i></span><span class="label-text">Your cart</span></span>
+            <span class="bar done"></span>
+            <span class="step current"><span class="num">2</span><span class="label-text">Delivery details</span></span>
+            <span class="bar"></span>
+            <span class="step"><span class="num">3</span><span class="label-text">Confirmation</span></span>
+          </div>
+        </div>
+
+        <div class="order-grid">
+          <div class="card panel">
+            <div class="panel-head"><h3>Your cart</h3><button type="button" id="clearCart">Clear cart</button></div>
+            <div id="orderCartList"></div>
+            <a href="menu.html" class="add-more">+ Add more dishes from the menu</a>
+          </div>
+          <aside class="summary" aria-label="Order summary">
+            <h3>Order summary</h3>
+            <div id="orderSummaryRows"></div>
+            <form class="promo" id="promoForm"><i data-icon="tag"></i><input placeholder="Promo code (try SAFFRON10)" aria-label="Promo code" maxlength="20"><button type="submit">Apply</button></form>
+            <p class="promo-msg" id="promoMsg"></p>
+            <a href="#deliveryDetails" class="btn btn-primary" id="toDetails">Continue to details <i data-icon="arrowr"></i></a>
+          </aside>
+        </div>
+
+        <div class="delivery-grid" id="deliveryDetails" style="scroll-margin-top:100px">
+          <form class="card panel checkout-form" id="checkoutForm" novalidate>
+            <h3 style="font-size:22px">Delivery details</h3>
+            <p class="muted" style="font-size:13px">We'll use these details to deliver your order.</p>
+            <div class="mode-toggle" role="radiogroup" aria-label="Delivery or pickup">
+              <button type="button" class="active" data-mode="delivery" role="radio" aria-checked="true"><i data-icon="truck"></i>Delivery</button>
+              <button type="button" data-mode="pickup" role="radio" aria-checked="false"><i data-icon="bag"></i>Pickup</button>
+            </div>
+            <div class="form-grid">
+              <div class="field">
+                <label for="coName">Customer name <span class="req">*</span></label>
+                <div class="input-wrap"><i data-icon="user"></i><input class="input" id="coName" autocomplete="name" placeholder="Your full name" maxlength="60"></div>
+                <span class="field-msg error"></span>
+              </div>
+              <div class="field">
+                <label for="coPhone">Phone number <span class="req">*</span></label>
+                <div class="input-wrap"><i data-icon="phone"></i><input class="input" type="tel" id="coPhone" autocomplete="tel" placeholder="+94 77 123 4567"></div>
+                <span class="field-msg error"></span>
+              </div>
+              <div class="field full" id="addressField">
+                <label for="coAddress">Delivery address <span class="req">*</span></label>
+                <div class="input-wrap"><i data-icon="pin"></i><input class="input" id="coAddress" autocomplete="street-address" placeholder="House no., street, city (Colombo 01 – 08 / Dehiwala)" maxlength="150"></div>
+                <span class="field-msg error"></span>
+              </div>
+              <div class="field">
+                <label for="coTime" id="timeLabel">Delivery time</label>
+                <div class="input-wrap"><i data-icon="clock"></i><select class="select" id="coTime"></select></div>
+                <span class="field-msg error"></span>
+              </div>
+              <div class="field">
+                <label for="coPayment">Payment method</label>
+                <div class="input-wrap"><i data-icon="receipt"></i><select class="select" id="coPayment">
+                  <option id="payCash">Cash on delivery</option>
+                  <option id="payCard">Card on delivery</option>
+                </select></div>
+              </div>
+              <div class="field full">
+                <label for="coNotes">Order notes (optional)</label>
+                <textarea class="textarea" id="coNotes" maxlength="300" placeholder="e.g. Less spicy please, and ring the bell at the blue gate." style="min-height:100px"></textarea>
+              </div>
+            </div>
+            <div class="notice"><i data-icon="info"></i><span>Demo project: no real payment is collected. Orders are simulated and saved locally in your browser.</span></div>
+            <button type="submit" class="btn btn-primary btn-block btn-lg" id="confirmBtn">Confirm Order</button>
+          </form>
+
+          <div class="side-cards">
+            <div class="card help-card"><span class="fi"><i data-icon="phone"></i></span><h4>Need help with your order?</h4><p>Call +94 11 234 5678 — we're happy to help with large or custom orders.</p></div>
+            <div class="event-card"><h4>Planning an event?</h4><p>Ask about our catering packages for 25 – 500 guests.</p><a href="contact.html?subject=catering" class="btn btn-dark btn-sm">Enquire now</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" style="padding-top:24px">
+      <div class="container">
+        <div class="section-head center"><h2>How online ordering works</h2></div>
+        <div class="how-grid">
+          <div class="card how-card"><span class="fi"><i data-icon="cart"></i></span><h4>1. Choose dishes</h4><p>Browse the menu and add dishes to your cart.</p></div>
+          <div class="card how-card"><span class="fi"><i data-icon="user"></i></span><h4>2. Add details</h4><p>Enter your name, phone and delivery address.</p></div>
+          <div class="card how-card"><span class="fi"><i data-icon="check"></i></span><h4>3. Confirm</h4><p>Review the total and confirm — no online payment needed.</p></div>
+          <div class="card how-card"><span class="fi"><i data-icon="truck"></i></span><h4>4. Enjoy</h4><p>We cook fresh and deliver in 30–45 minutes.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm" style="padding-top:0;padding-bottom:96px">
+      <div class="container">
+        <div class="promo-split">
+          <div class="txt">
+            <h2>Craving kottu at midnight?</h2>
+            <p>Schedule your order ahead and we'll have it ready the moment we open. Save your address once and reorder in two taps.</p>
+            <div class="hero-ctas"><a href="menu.html?cat=Kottu%20%26%20Roti" class="btn btn-primary">Start an order <i data-icon="arrowr"></i></a><a href="menu.html" class="btn btn-outline-light">View menu</a></div>
+          </div>
+          <div class="img"><img src="images/dishes/dish-15.svg" alt="Chicken kottu roti"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/cart-ui.js"></script>
+  <script src="js/services.js"></script>
+</body>
+</html>

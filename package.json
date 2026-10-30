@@ -1,0 +1,14 @@
+{
+  "name": "saffron-clay-restaurant",
+  "version": "1.0.0",
+  "description": "Saffron & Clay — Sri Lankan restaurant website (HTML, CSS, JavaScript, localStorage).",
+  "private": true,
+  "scripts": {
+    "start": "npx --yes serve -l 5500 .",
+    "test": "node tests/e2e-test.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.47.0"
+  },
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Menu | Saffron &amp; Clay</title>
+  <meta name="description" content="Browse 42 Sri Lankan dishes — search, filter by category, price, dietary needs and spice level, and add to your cart.">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="menu">
+  <header id="site-header"></header>
+
+  <main>
+    <section class="page-hero menu-hero">
+      <div class="menu-hero-plates" aria-hidden="true">
+        <img src="images/dishes/dish-15.svg" alt=""><img src="images/dishes/dish-26.svg" alt=""><img src="images/dishes/dish-22.svg" alt="">
+      </div>
+      <div class="container">
+        <p class="breadcrumb"><a href="index.html">Home</a> / Menu</p>
+        <h1>Our Menu</h1>
+        <p>42 dishes cooked fresh to order. Search, filter and add to your cart.</p>
+        <form class="menu-search" id="menuSearchForm" role="search">
+          <i data-icon="search"></i>
+          <input type="search" id="menuSearch" placeholder="Search dishes by name…" aria-label="Search dishes by name" autocomplete="off">
+          <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+      </div>
+    </section>
+
+    <div class="container menu-layout">
+      <!-- FILTERS -->
+      <aside class="card filters" id="filters" aria-label="Filters">
+        <span class="filter-sheet-head"></span>
+        <div class="filters-head">
+          <h3><i data-icon="filter"></i>Filters</h3>
+          <button type="button" id="resetFilters">Reset all</button>
+        </div>
+
+        <div class="filter-group">
+          <span class="mini-label">Category</span>
+          <div class="cat-list" id="catList" role="radiogroup" aria-label="Category"></div>
+        </div>
+
+        <div class="filter-group">
+          <span class="mini-label">Price range (LKR)</span>
+          <div class="range-slider">
+            <span class="track"></span><span class="fill" id="rangeFill"></span>
+            <input type="range" id="priceMin" min="0" max="3500" step="50" value="0" aria-label="Minimum price">
+            <input type="range" id="priceMax" min="0" max="3500" step="50" value="3500" aria-label="Maximum price">
+          </div>
+          <div class="price-inputs">
+            <label>Min <input type="number" id="priceMinInput" min="0" max="3500" step="50" value="0" aria-label="Minimum price in LKR"></label>
+            <label>Max <input type="number" id="priceMaxInput" min="0" max="3500" step="50" value="3500" aria-label="Maximum price in LKR"></label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <span class="mini-label">Dietary</span>
+          <div class="chip-row" id="dietChips">
+            <button type="button" class="chip active" data-diet="all">All</button>
+            <button type="button" class="chip" data-diet="veg">Veg</button>
+            <button type="button" class="chip" data-diet="nonveg">Non-veg</button>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <span class="mini-label">Spice level</span>
+          <div class="spice-list" id="spiceList">
+            <label><span class="check"><input type="checkbox" value="0"> Not spicy</span></label>
+            <label><span class="check"><input type="checkbox" value="1"> Mild</span><span class="spice"></span></label>
+            <label><span class="check"><input type="checkbox" value="2"> Medium</span><span class="spice"></span></label>
+            <label><span class="check"><input type="checkbox" value="3"> Hot</span><span class="spice"></span></label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <div class="toggle-row"><label for="availOnly">Available now only</label><span class="switch"><input type="checkbox" id="availOnly"><span></span></span></div>
+        </div>
+
+        <button type="button" class="btn btn-dark btn-block btn-sm" id="applyFilters">Show results</button>
+      </aside>
+
+      <!-- RESULTS -->
+      <section class="menu-results" aria-live="polite">
+        <div class="menu-toolbar">
+          <p class="result-count" id="resultCount">Showing 42 dishes</p>
+          <div class="sort-wrap">
+            <button type="button" class="btn btn-outline btn-sm mobile-filter-btn" id="openFilters"><i data-icon="filter"></i>Filters</button>
+            <label for="sortSelect">Sort by</label>
+            <select class="select" id="sortSelect">
+              <option value="recommended">Recommended</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name">Name: A – Z</option>
+              <option value="rating">Top rated</option>
+            </select>
+          </div>
+        </div>
+        <div class="active-chips" id="activeChips"></div>
+        <div class="product-grid" id="menuGrid"></div>
+        <div class="empty-state" id="emptyState" hidden>
+          <div class="ei"><i data-icon="search"></i></div>
+          <h3>No products found</h3>
+          <p>Try a different search or clear some filters.</p>
+          <button type="button" class="btn btn-outline btn-sm" id="clearFromEmpty">Clear filters</button>
+        </div>
+        <nav class="pagination" id="pagination" aria-label="Menu pages"></nav>
+      </section>
+    </div>
+    <div class="drawer-backdrop" id="filterBackdrop"></div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>

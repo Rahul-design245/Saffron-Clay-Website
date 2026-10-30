@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Saffron &amp; Clay</title>
+  <meta name="description" content="Contact Saffron & Clay — address, phone, opening hours and a message form for reservations, feedback and catering.">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contact">
+  <header id="site-header"></header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-art plate warm"><img src="images/dishes/dish-27.svg" alt=""></div>
+      <div class="container">
+        <p class="breadcrumb"><a href="index.html">Home</a> / Contact</p>
+        <h1>Get in Touch</h1>
+        <p>Questions, feedback or a table for twenty? We'd love to hear from you.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:56px">
+      <div class="container">
+        <div class="info-grid">
+          <div class="card info-card"><span class="fi"><i data-icon="pin"></i></span><h3>Visit us</h3><p>No. 42, Flower Road,<br>Colombo 07, Sri Lanka</p></div>
+          <div class="card info-card"><span class="fi"><i data-icon="phone"></i></span><h3>Call us</h3><a href="tel:+94112345678">+94 11 234 5678</a><a href="https://wa.me/94771234567" target="_blank" rel="noopener">+94 77 123 4567 (WhatsApp)</a></div>
+          <div class="card info-card"><span class="fi"><i data-icon="mail"></i></span><h3>Email us</h3><a href="mailto:hello@saffronclay.lk">hello@saffronclay.lk</a><a href="mailto:events@saffronclay.lk">events@saffronclay.lk</a></div>
+          <div class="card info-card"><span class="fi"><i data-icon="clock"></i></span><h3>Opening hours</h3><p>Mon – Fri: 11am – 10pm<br>Sat – Sun: 10am – 11pm</p><p id="contactOpen" style="margin-top:6px;font-weight:600"></p></div>
+        </div>
+
+        <div class="contact-grid">
+          <form class="card contact-form" id="contactForm" novalidate>
+            <h2>Send us a message</h2>
+            <p>We usually reply within one working day.</p>
+            <div class="form-grid">
+              <div class="field">
+                <label for="cName">Full name <span class="req">*</span></label>
+                <input class="input" id="cName" name="name" autocomplete="name" placeholder="Your name" maxlength="60">
+                <span class="field-msg error"></span>
+              </div>
+              <div class="field">
+                <label for="cEmail">Email address <span class="req">*</span></label>
+                <input class="input" type="email" id="cEmail" name="email" autocomplete="email" placeholder="you@example.com">
+                <span class="field-msg error"></span>
+              </div>
+              <div class="field">
+                <label for="cPhone">Phone number (optional)</label>
+                <input class="input" type="tel" id="cPhone" name="phone" autocomplete="tel" placeholder="+94 7X XXX XXXX">
+                <span class="field-msg error"></span>
+              </div>
+              <div class="field">
+                <label for="cSubject">Subject <span class="req">*</span></label>
+                <select class="select" id="cSubject" name="subject">
+                  <option value="">Choose a subject</option>
+                  <option>Table reservation</option>
+                  <option>Online order question</option>
+                  <option>Catering &amp; events</option>
+                  <option>Feedback</option>
+                  <option>Other</option>
+                </select>
+                <span class="field-msg error"></span>
+              </div>
+              <div class="field full">
+                <label for="cMessage">Message <span class="req">*</span></label>
+                <div style="position:relative">
+                  <textarea class="textarea" id="cMessage" name="message" maxlength="500" placeholder="How can we help?"></textarea>
+                  <span class="char-count" id="charCount">0 / 500</span>
+                </div>
+                <span class="field-msg error"></span>
+              </div>
+            </div>
+            <label class="check" style="margin-top:18px"><input type="checkbox" id="cCopy"> Save a copy of this message to my account</label>
+            <div class="form-foot">
+              <button type="submit" class="btn btn-primary">Send Message <i data-icon="send"></i></button>
+              <small>Fields marked * are required</small>
+            </div>
+          </form>
+
+          <div class="contact-side">
+            <div class="map-card">
+              <img src="images/map.svg" alt="Map showing Saffron & Clay on Flower Road, Colombo 07">
+              <span class="map-pin" aria-hidden="true"></span>
+              <a class="btn btn-dark btn-sm" href="https://www.google.com/maps/search/?api=1&query=Flower+Road+Colombo+07" target="_blank" rel="noopener">Get directions <i data-icon="arrowr"></i></a>
+            </div>
+            <div class="follow-card">
+              <h3>Follow our kitchen</h3>
+              <p>Daily specials, behind-the-scenes and recipes.</p>
+              <div class="follow-grid">
+                <a href="#"><span>f</span>Facebook</a>
+                <a href="#"><span>ig</span>Instagram</a>
+                <a href="#"><span>tt</span>TikTok</a>
+                <a href="#"><span>yt</span>YouTube</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 style="margin-top:80px;font-size:30px">Quick answers</h2>
+        <div class="faq" id="faq">
+          <div class="card faq-item open"><button class="faq-q" type="button" aria-expanded="true">Do you take table reservations? <i data-icon="plus"></i></button><div class="faq-a"><p>Yes — call us or use the form above. We hold tables for 15 minutes.</p></div></div>
+          <div class="card faq-item"><button class="faq-q" type="button" aria-expanded="false">Do you cater for private events? <i data-icon="plus"></i></button><div class="faq-a"><p>We cater for 25 to 500 guests — weddings, almsgivings and office lunches. Please book at least five days ahead and email events@saffronclay.lk.</p></div></div>
+          <div class="card faq-item"><button class="faq-q" type="button" aria-expanded="false">Is parking available? <i data-icon="plus"></i></button><div class="faq-a"><p>We have eight free parking spaces behind the restaurant and street parking on Flower Road after 6 pm.</p></div></div>
+          <div class="card faq-item"><button class="faq-q" type="button" aria-expanded="false">Can you adjust the spice level? <i data-icon="plus"></i></button><div class="faq-a"><p>Of course. Add a note to your online order or tell your server — most curries can be made mild.</p></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>
